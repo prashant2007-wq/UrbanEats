@@ -11,3 +11,23 @@ UrbanEats is a responsive web-based food and retail delivery platform. It allows
 🖋️ HTML5 – Semantic structure, elements, and accessibility<br>
 🎨 CSS3 – Layout, colors and responsive design<br>
 ⚙️ JavaScript (ES6) – Dynamic interactivity, filtering, dark mode, and form validation<br>
+# Project Structure
+UrbanEats/
+├── index.html          
+├── favorites.html      
+├── cart.html            
+├── track.html
+├── /css
+│   └── style.css        
+├── /js
+│   └── script.js      
+└── README.md 
+# Deployment
+Vercel/Netlify recommended
+# Contributing
+1. Fork and create a feature branch<br>
+2. Commit with clear messages<br>
+3. Open a PR with context and screenshots for UI changes<br>
+# License
+MIT. See LICENSE for details.
+
