@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UrbanEats | Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #333;
+    }
+    header, footer {
+      background-color: #00ccbc;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 30px auto;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    caption {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    form {
+      width: 80%;
+      margin: auto;
+    }
+    fieldset {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    input {
+      margin: 5px;
+      padding: 5px;
+      width: 95%;
+    }
+    input[type="submit"] {
+      background-color: #00ccbc;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UrbanEats</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <table>
+    <caption>Order Summary</caption>
+    <thead>
+      <tr><th>Item</th><th>Quantity</th><th>Price</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Margherita Pizza</td><td>1</td><td>₹250</td></tr>
+      <tr><td>Delivery Fee</td><td>-</td><td>₹30</td></tr>
+      <tr><td><b>Total</b></td><td>-</td><td><b>₹280</b></td></tr>
+    </tbody>
+  </table>
+
+  <form>
+    <fieldset>
+      <legend>Checkout Details</legend>
+      <p>Name: <input type="text" name="name"></p>
+      <p>Address: <input type="text" name="address"></p>
+      <p>Phone: <input type="tel" name="phone"></p>
+      <p><input type="submit" value="Place Order"></p>
+    </fieldset>
+  </form>
+
+  <footer>
+    <p>&copy; 2025 UrbanEats</p>
+  </footer>
+</body>
+</html>
+
