@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UrbanEats | Track Order</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      margin: 0;
+    }
+
+    header {
+      background-color: #00ccbc;
+      padding: 10px;
+      color: white;
+      text-align: center;
+    }
+    header img { width: 50px; vertical-align: middle; }
+    nav a {
+      color: white; text-decoration: none; margin: 0 15px;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .track-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: white;
+      margin: 40px auto;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .track-section input {
+      padding: 10px; width: 250px;
+      border: 1px solid #ccc; border-radius: 5px;
+    }
+    .track-section button {
+      background-color: #00ccbc; color: white;
+      border: none; padding: 10px 15px;
+      border-radius: 5px; margin-left: 10px;
+      cursor: not-allowed;
+    }
+    footer {
+      background-color: #00ccbc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="UrbanEats Logo">
+    <h1>UrbanEats</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="cart.html">Cart</a>
+      <a href="track.html">Track Order</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="track-section">
+    <h2>Track Your Order</h2>
+    <p>Enter your Order ID below to check the delivery status.</p>
+    <input type="text" placeholder="Enter Order ID">
+    <button>Track</button>
+    <p><em>(Feature not active in static version)</em></p>
+  </section>
+
+  <footer>
+    <p>Follow UrbanEats – 
+      <a href="#">Instagram</a> | 
+      <a href="#">Facebook</a> | 
+      <a href="#">Twitter</a>
+    </p>
+    <p>&copy; 2025 UrbanEats. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
