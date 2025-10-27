@@ -29,9 +29,8 @@ UrbanEats/
   /js
     └── script.js
 
-  └── README.md
-        
-
+  └── README.
+  ``` 
 # Deployment
 Vercel/Netlify recommended
 # Contributing
