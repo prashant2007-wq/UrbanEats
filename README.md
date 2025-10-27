@@ -22,10 +22,6 @@ UrbanEats/
   cart.html
   track.html
   login.html
-
-  /css
-    └── style.css
-
   /js
     └── script.js
 
