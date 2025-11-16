@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UrbanEats | Favorites</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      color: #00ccbc;
+      text-align: center;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 204, 188, 0.2);
+      animation: fadeInDown 0.8s ease;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ccbc;
+      text-shadow: 0 0 8px #00ccbc;
+    }
+
+    .favorites {
+      width: 85%;
+      margin: 60px auto;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .favorites h2 {
+      color: #00ccbc;
+      font-size: 2em;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .fav-card {
+      display: inline-block;
+      width: 230px;
+      margin: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s, box-shadow 0.4s, filter 0.3s;
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      position: relative;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .fav-card:nth-child(2) { animation-delay: 0.2s; }
+    .fav-card:nth-child(3) { animation-delay: 0.4s; }
+
+    .fav-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0, 204, 188, 0.4);
+      filter: brightness(1.05);
+    }
+
+    .fav-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .fav-card:hover img {
+      filter: brightness(1);
+    }
+
+    .fav-card h4 {
+      margin: 12px 0 5px;
+      font-size: 1.1em;
+      color: #fff;
+    }
+
+    .fav-card p {
+      color: #ccc;
+      margin-bottom: 12px;
+      font-size: 0.9em;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #00ccbc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UrbanEats</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <div class="favorites">
+    <h2>My Favorites ❤️</h2>
+
+    <div class="fav-card" data-category="Pizza" data-rating="4.5">
+      <img src="https://b.zmtcdn.com/data/pictures/4/20745014/7ebe98da11fd9f54e78926045504f23c.jpg" alt="Pizza Palace">
+      <h4>Pizza Palace</h4>
+      <p>Italian Cuisine</p>
+      <p>⭐ 4.5</p>
+    </div>
+
+    <div class="fav-card" data-category="Sushi" data-rating="4.7">
+      <img src="https://resizer.otstatic.com/v3/photos/26232466-2?width=752&height=752&webp=true" alt="Sushi House">
+      <h4>Sushi House</h4>
+      <p>Japanese Cuisine</p>
+      <p>⭐ 4.7</p>
+    </div>
+
+    <div class="fav-card" data-category="Indian" data-rating="4.6">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/ce/af/26/spice-garden.jpg" alt="Spice Garden">
+      <h4>Spice Garden</h4>
+      <p>Indian Cuisine</p>
+      <p>⭐ 4.6</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Follow UrbanEats – 
+      <a href="https://www.instagram.com/urbaneats/" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com/urbaneat/" target="_blank">Facebook</a> |
+      <a href="https://x.com/feasturbaneats?lang=en" target="_blank">Twitter</a>
+    </p>
+    <p>&copy; 2025 UrbanEats. All rights reserved.</p>
+  </footer>
+</body>
+</html>

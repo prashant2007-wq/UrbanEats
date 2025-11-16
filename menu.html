@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UrbanEats | Menu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      color: #00ccbc;
+      text-align: center;
+      padding: 20px 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 204, 188, 0.2);
+      animation: fadeInDown 0.8s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2em;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05em;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background-color: #00ccbc;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #00ccbc;
+      text-shadow: 0 0 10px #00ccbc;
+    }
+
+    .banner {
+      background-image: url("https://images.unsplash.com/photo-1601924582971-dc2a8a25d9b0?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 90px 20px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1s ease;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .banner h1, .banner p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner h1 {
+      display: inline-block;
+      background: rgba(0, 204, 188, 0.2);
+      padding: 10px 25px;
+      border-radius: 12px;
+      font-size: 2.4em;
+      box-shadow: 0 0 15px rgba(0, 204, 188, 0.3);
+    }
+
+    .banner p {
+      margin-top: 10px;
+      color: #ddd;
+      font-size: 1.1em;
+    }
+    /* MENU TABLE */
+    table {
+      width: 85%;
+      margin: 50px auto;
+      border-collapse: collapse;
+      border-radius: 14px;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      animation: fadeUp 1s ease;
+    }
+
+    caption {
+      caption-side: top;
+      color: #00ccbc;
+      font-weight: 600;
+      font-size: 1.6em;
+      padding: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    th, td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      text-align: center;
+    }
+
+    th {
+      background: rgba(0, 204, 188, 0.15);
+      color: #00ccbc;
+      font-size: 1.1em;
+    }
+
+    tr:hover {
+      background: rgba(0, 204, 188, 0.08);
+      transition: background 0.3s ease;
+    }
+
+    button {
+      background-color: #00ccbc;
+      color: #000;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00e5d0;
+      box-shadow: 0 0 10px #00ccbc;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #00ccbc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        gap: 20px;
+      }
+
+      .banner h1 {
+        font-size: 1.8em;
+      }
+
+      table {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UrbanEats</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="cart.html">Cart</a>
+      <a href="track.html">Track Order</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="banner">
+    <h1>Pizza Palace 🍕</h1>
+    <p>📍 123 Food Street, City | ⭐ 4.5</p>
+  </div>
+
+  <table>
+    <caption>Our Menu</caption>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Add</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Margherita Pizza</td>
+        <td>Classic cheese & tomato</td>
+        <td>₹250</td>
+        <td><button>Add</button></td>
+      </tr>
+      <tr>
+        <td>Pepperoni Pizza</td>
+        <td>Loaded with spicy pepperoni</td>
+        <td>₹320</td>
+        <td><button>Add</button></td>
+      </tr>
+      <tr>
+        <td>Veggie Supreme</td>
+        <td>Onions, capsicum, olives</td>
+        <td>₹280</td>
+        <td><button>Add</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <p>
+      Follow UrbanEats – 
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a>
+    </p>
+    <p>&copy; 2025 UrbanEats. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
