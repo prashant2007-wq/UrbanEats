@@ -2,208 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UrbanEats | Cart</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: hidden;
-    }
-
-    header {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      text-align: center;
-      padding: 25px 0 15px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 15px rgba(0, 204, 188, 0.25);
-      animation: fadeInDown 1s ease;
-    }
-
-    header h1 {
-      font-size: 2.2em;
-      color: #00ccbc;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: #bbb;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #00ccbc;
-      text-shadow: 0 0 8px #00ccbc;
-    }
-
-    main {
-      flex: 1;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 60px 20px;
-    }
-
-    .cart-box {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 204, 188, 0.2);
-      padding: 40px;
-      width: 90%;
-      max-width: 750px;
-      backdrop-filter: blur(12px);
-      animation: fadeIn 1s ease;
-    }
-
-    .cart-box h2 {
-      text-align: center;
-      color: #00ccbc;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-      text-align: center;
-      color: #eee;
-    }
-
-    th, td {
-      padding: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    th {
-      color: #00ccbc;
-      text-transform: uppercase;
-      font-weight: 600;
-      background: rgba(0, 204, 188, 0.15);
-    }
-
-    tr:nth-child(even) {
-      background: rgba(255,255,255,0.05);
-    }
-
-    tr:last-child td {
-      border-top: 2px solid #00ccbc;
-      font-weight: 600;
-      color: #00ccbc;
-    }
-
-    form {
-      margin-top: 30px;
-    }
-
-    fieldset {
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 25px;
-      background: rgba(255,255,255,0.05);
-    }
-
-    legend {
-      color: #00ccbc;
-      font-weight: 600;
-      padding: 0 10px;
-    }
-
-    input {
-      width: 100%;
-      margin: 12px 0;
-      padding: 12px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.06);
-      color: #fff;
-      font-size: 1em;
-      transition: 0.3s;
-    }
-
-    input:focus {
-      border-color: #00ccbc;
-      box-shadow: 0 0 10px rgba(0, 204, 188, 0.3);
-      outline: none;
-    }
-
-    input[type="submit"] {
-      background: linear-gradient(90deg, #00ccbc, #00b2a5);
-      color: #000;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 0 15px rgba(0,204,188,0.3);
-    }
-
-    input[type="submit"]:hover {
-      background: linear-gradient(90deg, #00e0d0, #00ccbc);
-      box-shadow: 0 0 20px rgba(0,204,188,0.6);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      text-align: center;
-      padding: 20px 0;
-      color: #aaa;
-      font-size: 0.9em;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    footer a {
-      color: #00ccbc;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @media (max-width: 768px) {
-      .cart-box {
-        padding: 25px;
-      }
-
-      table th, td {
-        padding: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="cart.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>UrbanEats</h1>
+    <div class="header-content">
+      <h1>UrbanEats</h1>
+      <button id="toggleBtn" class="theme-toggle">
+        <span class="toggle-slider"></span>
+        <span class="toggle-text">Dark</span>
+      </button>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="favorites.html">Favorites</a>
@@ -218,12 +30,28 @@
       <h2>🛒 Order Summary</h2>
       <table>
         <thead>
-          <tr><th>Item</th><th>Quantity</th><th>Price</th></tr>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
         </thead>
         <tbody>
-          <tr><td>Margherita Pizza</td><td>1</td><td>₹250</td></tr>
-          <tr><td>Delivery Fee</td><td>-</td><td>₹30</td></tr>
-          <tr><td>Total</td><td>-</td><td>₹280</td></tr>
+          <tr>
+            <td>Margherita Pizza</td>
+            <td>1</td>
+            <td>₹250</td>
+          </tr>
+          <tr>
+            <td>Delivery Fee</td>
+            <td>-</td>
+            <td>₹30</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>-</td>
+            <td>₹280</td>
+          </tr>
         </tbody>
       </table>
 
@@ -248,5 +76,7 @@
     </p>
     <p>&copy; 2025 UrbanEats. All rights reserved.</p>
   </footer>
+
+  <script src="cart.js"></script>
 </body>
 </html>
