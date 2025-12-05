@@ -16,20 +16,30 @@ UrbanEats is a responsive web-based food and retail delivery platform. It allows
 ## Project Structure
 
 ```bash
-UrbanEats/
-│
-├── index.html
-├── menu.html
-├── favourites.html
-├── cart.html
-├── track.html
-├── login.html
-├── index.css
+URBANEATS/
 │
 ├── .vscode/
-│   └── settings.json   
+│   └── settings.json
 │
-└── README.md   
+├── index.html
+├── index.css
+├── index.js
+│
+├── favourites.html
+├── favourites.css
+│
+├── cart.html
+├── cart.css
+├── cart.js
+│
+├── track.html
+├── track.css
+├── track.js
+│
+├── login.html
+├── login.css
+│
+└── README.md
   ``` 
 # Deployment
 Vercel/Netlify recommended
