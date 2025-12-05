@@ -3,201 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>UrbanEats | Track Order</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
-      color: #f0f0f0;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* HEADER */
-    header {
-      background: rgba(0, 0, 0, 0.85);
-      color: #00ccbc;
-      padding: 20px 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(0, 204, 188, 0.25);
-      animation: fadeInDown 0.8s ease;
-    }
-
-    header h1 {
-      font-size: 2.3em;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      text-shadow: 0 0 10px rgba(0, 204, 188, 0.6);
-    }
-
-    /* NAVIGATION BAR */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      position: relative;
-      color: #f5f5f5;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.05em;
-      transition: color 0.3s ease;
-    }
-
-    /* Underline animation */
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 2px;
-      background-color: #00ccbc;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-    }
-
-    nav a:hover::after,
-    nav a.active::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #00ccbc;
-      text-shadow: 0 0 10px #00ccbc;
-    }
-
-    /* TRACK SECTION */
-    .track-section {
-      text-align: center;
-      padding: 60px 20px;
-      background: rgba(255, 255, 255, 0.08);
-      margin: 80px auto;
-      width: 60%;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.1);
-      animation: fadeIn 1s ease;
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-
-    .track-section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(0, 204, 188, 0.4);
-    }
-
-    .track-section h2 {
-      color: #00ccbc;
-      font-size: 1.9em;
-      margin-bottom: 10px;
-    }
-
-    .track-section p {
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-
-    .track-section input {
-      padding: 12px;
-      width: 260px;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      color: #f0f0f0;
-      font-size: 1em;
-      transition: border 0.3s, box-shadow 0.3s;
-    }
-
-    .track-section input:focus {
-      border-color: #00ccbc;
-      box-shadow: 0 0 8px rgba(0,204,188,0.4);
-      outline: none;
-    }
-
-    .track-section button {
-      background: #00ccbc;
-      color: #000;
-      border: none;
-      padding: 12px 22px;
-      border-radius: 8px;
-      margin-left: 10px;
-      cursor: not-allowed;
-      opacity: 0.8;
-      font-weight: 600;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .track-section button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 15px rgba(0,204,188,0.4);
-    }
-
-    /* FOOTER */
-    footer {
-      background: rgba(0, 0, 0, 0.9);
-      color: #aaa;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9em;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      margin-top: auto;
-    }
-
-    footer a {
-      color: #00ccbc;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        gap: 20px;
-      }
-      .track-section {
-        width: 85%;
-        padding: 40px 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="track.css">
 </head>
 <body>
-
   <header>
     <h1>UrbanEats</h1>
     <nav>
-      <a href="index.html" >Home</a>
+      <a href="index.html">Home</a>
       <a href="favourites.html">Favourites</a>
       <a href="cart.html">Cart</a>
       <a href="track.html" class="active">Track Order</a>
@@ -208,20 +20,21 @@
   <section class="track-section">
     <h2>Track Your Order</h2>
     <p>Enter your Order ID below to check the delivery status.</p>
-    <input type="text" placeholder="Enter Order ID">
-    <button>Track</button>
-    <p><em>(Feature not active in static version)</em></p>
+    <input type="text" id="orderIdInput" placeholder="Enter Order ID">
+    <button id="trackBtn">Track</button>
+    <div id="statusMessage" style="display: none; margin-top: 20px; color: #00ccbc; font-weight: 500;"></div>
   </section>
 
   <footer>
     <p>
       Follow UrbanEats – 
-      <a href="#">Instagram</a> | 
-      <a href="#">Facebook</a> | 
-      <a href="#">Twitter</a>
+      <a href="https://www.instagram.com/urbaneats/" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com/urbaneat/" target="_blank">Facebook</a> |
+      <a href="https://x.com/feasturbaneats?lang=en" target="_blank">Twitter</a>
     </p>
     <p>&copy; 2025 UrbanEats. All rights reserved.</p>
   </footer>
 
+  <script src="track.js"></script>
 </body>
 </html>

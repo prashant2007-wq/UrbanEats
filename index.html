@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UrbanEats | Home</title>
   <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxJvep9rXNWu7C2UqSGXGW3RqPY0Pd-fv90A&s" 
-       alt="UrbanEats Logo" 
-       class="logo" 
-       style="width: 70px; 
-              height: 70px; 
-              border-radius: 50%; 
-              margin-bottom: 10px; 
-              filter: drop-shadow(0 0 8px rgba(0,204,188,0.6));">
+    <div class="header-content">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxJvep9rXNWu7C2UqSGXGW3RqPY0Pd-fv90A&s" 
+         alt="UrbanEats Logo" 
+         class="logo">
+      <button id="toggleBtn" class="theme-toggle">
+        <span class="toggle-slider"></span>
+        <span class="toggle-text">Dark</span>
+      </button>
+    </div>
     <div class="navbar">
       <a href="index.html" class="active">Home</a>
       <a href="favourites.html">Favourites</a>
@@ -34,11 +37,15 @@
     <aside class="sidebar">
       <h3>Categories</h3>
       <ul id="categories">
+        <li data-category="all" class="active-category">All</li>
         <li data-category="Pizza">Pizza</li>
         <li data-category="Sushi">Sushi</li>
         <li data-category="Indian">Indian</li>
         <li data-category="Burgers">Burgers</li>
         <li data-category="Desserts">Desserts</li>
+        <li data-category="Chinese">Chinese</li>
+        <li data-category="Cafe">Cafe</li>
+        <li data-category="Mexican">Mexican</li>
       </ul>
 
       <h3>Filters</h3>
@@ -52,47 +59,65 @@
     <section class="content">
       <div class="filter-bar">
         <h3>Popular Restaurants</h3>
-        <button id="ratingFilter">⭐ 4.5 + Filter</button>
+        <button id="ratingFilter">⭐ 4.5+ Filter</button>
       </div>
 
-      <div class="restaurant" data-category="Pizza" data-rating="4.5">
-        <img src="https://b.zmtcdn.com/data/pictures/4/20745014/7ebe98da11fd9f54e78926045504f23c.jpg" alt="Pizza Palace">
-        <h4>Pizza Palace</h4><p>Italian Cuisine</p><p>⭐ 4.5</p>
-      </div>
+      <div id="restaurantContainer">
+        <div class="restaurant" data-category="Pizza" data-rating="4.5">
+          <img src="https://b.zmtcdn.com/data/pictures/4/20745014/7ebe98da11fd9f54e78926045504f23c.jpg" alt="Pizza Palace">
+          <h4>Pizza Palace</h4>
+          <p>Italian Cuisine</p>
+          <p>⭐ 4.5</p>
+        </div>
 
-      <div class="restaurant" data-category="Sushi" data-rating="4.7">
-        <img src="https://resizer.otstatic.com/v3/photos/26232466-2?width=752&height=752&webp=true" alt="Sushi House">
-        <h4>Sushi House</h4><p>Japanese Cuisine</p><p>⭐ 4.7</p>
-      </div>
+        <div class="restaurant" data-category="Sushi" data-rating="4.7">
+          <img src="https://resizer.otstatic.com/v3/photos/26232466-2?width=752&height=752&webp=true" alt="Sushi House">
+          <h4>Sushi House</h4>
+          <p>Japanese Cuisine</p>
+          <p>⭐ 4.7</p>
+        </div>
 
-      <div class="restaurant" data-category="Indian" data-rating="4.6">
-        <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/ce/af/26/spice-garden.jpg" alt="Spice Garden">
-        <h4>Spice Garden</h4><p>Indian Cuisine</p><p>⭐ 4.6</p>
-      </div>
+        <div class="restaurant" data-category="Indian" data-rating="4.6">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/ce/af/26/spice-garden.jpg" alt="Spice Garden">
+          <h4>Spice Garden</h4>
+          <p>Indian Cuisine</p>
+          <p>⭐ 4.6</p>
+        </div>
 
-      <div class="restaurant" data-category="Burgers" data-rating="4.4">
-        <img src="https://preview.redd.it/ukoinonks2e41.jpg?width=640&crop=smart&auto=webp&s=7b0542008c7663a3a54832f508bdc7835f5fd9b6" alt="Burger Hub">
-        <h4>Burger Hub</h4><p>American Burgers</p><p>⭐ 4.4</p>
-      </div>
+        <div class="restaurant" data-category="Burgers" data-rating="4.4">
+          <img src="https://preview.redd.it/ukoinonks2e41.jpg?width=640&crop=smart&auto=webp&s=7b0542008c7663a3a54832f508bdc7835f5fd9b6" alt="Burger Hub">
+          <h4>Burger Hub</h4>
+          <p>American Burgers</p>
+          <p>⭐ 4.4</p>
+        </div>
 
-      <div class="restaurant" data-category="Desserts" data-rating="4.8">
-        <img src="https://b.zmtcdn.com/data/pictures/9/19775979/b5c6e16c3a5e8b050502a2c084f724bb.jpg" alt="Sweet Treats">
-        <h4>Sweet Treats</h4><p>Dessert Heaven</p><p>⭐ 4.8</p>
-      </div>
+        <div class="restaurant" data-category="Desserts" data-rating="4.8">
+          <img src="https://b.zmtcdn.com/data/pictures/9/19775979/b5c6e16c3a5e8b050502a2c084f724bb.jpg" alt="Sweet Treats">
+          <h4>Sweet Treats</h4>
+          <p>Dessert Heaven</p>
+          <p>⭐ 4.8</p>
+        </div>
 
-      <div class="restaurant" data-category="Chinese" data-rating="4.3">
-        <img src="https://website-cdn.menusifu.com/wp-content/uploads/dragonexpress314.com/2022/08/AF1QipNXi40IofYyGTMhRMqXeCtoFHewOV1oo6pR2ePxs1024-e1659591186358.jpg" alt="Dragon Express">
-        <h4>Dragon Express</h4><p>Chinese Cuisine</p><p>⭐ 4.3</p>
-      </div>
+        <div class="restaurant" data-category="Chinese" data-rating="4.3">
+          <img src="https://website-cdn.menusifu.com/wp-content/uploads/dragonexpress314.com/2022/08/AF1QipNXi40IofYyGTMhRMqXeCtoFHewOV1oo6pR2ePxs1024-e1659591186358.jpg" alt="Dragon Express">
+          <h4>Dragon Express</h4>
+          <p>Chinese Cuisine</p>
+          <p>⭐ 4.3</p>
+        </div>
 
-      <div class="restaurant" data-category="Cafe" data-rating="4.9">
-        <img src="https://b.zmtcdn.com/data/pictures/0/21442630/5b895ed22d824ff95072b4cc46021337.jpg" alt="Brew & Bite">
-        <h4>Brew & Bite</h4><p>Café & Beverages</p><p>⭐ 4.9</p>
-      </div>
+        <div class="restaurant hidden" data-category="Cafe" data-rating="4.9">
+          <img src="https://b.zmtcdn.com/data/pictures/0/21442630/5b895ed22d824ff95072b4cc46021337.jpg" alt="Brew & Bite">
+          <h4>Brew & Bite</h4>
+          <p>Café & Beverages</p>
+          <p>⭐ 4.9</p>
+        </div>
 
-      <div class="restaurant" data-category="Mexican" data-rating="4.2">
-        <img src="https://platform.la.eater.com/wp-content/uploads/sites/26/chorus/uploads/chorus_asset/file/15706675/taco-fiesta-exterior.0.0.1506345106.jpg" alt="Taco Fiesta">
-        <h4>Taco Fiesta</h4><p>Mexican Flavors</p><p>⭐ 4.2</p>
+        <div class="restaurant hidden" data-category="Mexican" data-rating="4.2">
+          <img src="https://platform.la.eater.com/wp-content/uploads/sites/26/chorus/uploads/chorus_asset/file/15706675/taco-fiesta-exterior.0.0.1506345106.jpg" alt="Taco Fiesta">
+          <h4>Taco Fiesta</h4>
+          <p>Mexican Flavors</p>
+          <p>⭐ 4.2</p>
+        </div>
       </div>
 
       <button id="loadMore">Load More</button>
@@ -101,12 +126,13 @@
 
   <footer>
     <p>Follow UrbanEats – 
-      <a href="#">Instagram</a> |
-      <a href="#">Facebook</a> |
-      <a href="#">Twitter</a>
+      <a href="https://www.instagram.com/urbaneats/" target="_blank">Instagram</a> |
+      <a href="https://www.facebook.com/urbaneat/" target="_blank">Facebook</a> |
+      <a href="https://x.com/feasturbaneats?lang=en" target="_blank">Twitter</a>
     </p>
     <p>&copy; 2025 UrbanEats. All rights reserved.</p>
   </footer>
-  
+
+  <script src="index.js"></script>
 </body>
 </html>
