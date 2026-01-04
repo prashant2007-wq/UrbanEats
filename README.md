@@ -13,7 +13,7 @@ UrbanEats is a responsive web-based food and retail delivery platform. It allows
 ⚙️ JavaScript (ES6) – Dynamic interactivity, filtering, dark mode, and form validation<br>
 # Project Structure
 
-## Project Structure
+## Project Structure:
 
 ```bash
 URBANEATS/
