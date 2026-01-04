@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() 
+{
   const button = document.querySelector("#toggleBtn");
   const toggleText = document.querySelector(".toggle-text");
   const body = document.querySelector("body");
